@@ -8,9 +8,9 @@ run docker compose up --build -d
 
 after the containers are up and running
 
-curl http://localhost/users
-curl http://localhost/admissions
-curl http://localhost/faculites
+1. curl http://localhost/users
+2. curl http://localhost/admissions
+3. curl http://localhost/faculites
 
 If you get a 200 OK message from the above then all the services are up and runnning
 
