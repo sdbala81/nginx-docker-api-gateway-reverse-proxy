@@ -56,7 +56,7 @@ services:
 
 
     reverse-proxy:
-      image: nginx:1.17.10
+      image: nginx:latest
       container_name: reverse-proxy
       depends_on:
         - user-management
@@ -67,3 +67,5 @@ services:
         - ../.nginx/nginx.conf:/etc/nginx/nginx.conf
       ports:
         - 80:80
+        - 81:81
+        - 82:82
