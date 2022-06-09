@@ -1,21 +1,33 @@
-# Sample application using some backend services and react application
+# Configuring NGINX as an API Gateway and as a Reverse Proxy
 
-after you've cloned the application
+This demo is to show how a NGINX could be used as a
 
-cd to .docker folder
+1. API Gateway
+2. Reverse Proxy
+3. Web server
 
-run docker compose up --build -d
+## High level solution architecture
 
-after the containers are up and running
+TBD
 
-1. curl http://localhost/users
-2. curl http://localhost/admissions
-3. curl http://localhost/faculites
+## About the sample application that's being developed.
 
-If you get a 200 OK message from the above then all the services are up and runnning
+TBD
 
-Time to browse the application
+## What is a API Gateway and what are its benefits
 
-browse to http://localhost , you should see the admin portal
+TBD
 
-browse to http://localhost/students , you dont see anything instead you get an error
+## How are each of the above configured
+
+TBD
+
+## What is a Reverse Proxy and How are its properties configured
+
+TBD
+
+## References & Credits
+
+1. https://yasithev.medium.com/nginx-as-an-api-gateway-with-oauth-2-0-authorization-on-aws-4d7dbfe2a85b
+2. https://stackoverflow.com/questions/51769501/how-to-authenticate-with-nginx-and-microsoft-azure-ad
+3. http://nginx.org/en/docs/http/ngx_http_auth_request_module.html
