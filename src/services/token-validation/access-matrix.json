@@ -1,0 +1,42 @@
+{
+  "faculties": {
+    "path": "/faculties",
+    "methods": ["GET", "POST", "PUT", "DELETE"],
+    "roles": ["Staff"]
+  },
+  "applicationRegistrations": {
+    "path": "/applicationRegistrations",
+    "methods": ["GET", "POST", "PUT", "DELETE"],
+    "roles": ["Staff"]
+  },
+  "academicYears": {
+    "path": "/academicYears",
+    "methods": ["GET", "POST", "PUT", "DELETE"],
+    "roles": ["Staff"]
+  },
+  "programmes": {
+    "path": "/programmes",
+    "methods": ["GET", "POST", "PUT", "DELETE"],
+    "roles": ["Staff"]
+  },
+  "admissions": {
+    "path": "/admissions",
+    "methods": ["GET", "POST", "PUT", "DELETE"],
+    "roles": ["Staff"]
+  },
+  "enrollments": {
+    "path": "/enrollments",
+    "methods": ["GET", "POST", "PUT", "DELETE"],
+    "roles": ["Staff"]
+  },
+  "students": {
+    "path": "/students",
+    "methods": ["GET", "POST", "PUT", "DELETE"],
+    "roles": ["Staff"]
+  },
+  "departments": {
+    "path": "/departments",
+    "methods": ["GET", "POST", "PUT", "DELETE"],
+    "roles": ["Staff"]
+  }
+}

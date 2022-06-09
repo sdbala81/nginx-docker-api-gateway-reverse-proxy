@@ -54,6 +54,16 @@ services:
         - 8080:80
       restart: on-failure
 
+    
+    token-validation:
+      image: token-validation
+      container_name: token-validation
+      build:
+        context: ../src/services/token-validation
+      ports:
+        - 5003:5003
+      restart: on-failure   
+
 
     reverse-proxy:
       image: nginx:latest
