@@ -18,6 +18,21 @@ function App() {
         }
       );
   };
+
+  const callAdmissions = () => {
+    fetch("http://localhost:82/admissions/users")
+      .then((res) => res.json())
+      .then(
+        (result) => {
+          console.log(result);
+          setCaption(JSON.stringify(result));
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
+  };
+
   return (
     <div>
       <h1>Admin Portal</h1>
@@ -27,6 +42,12 @@ function App() {
       <div>
         <button type="button" onClick={callFaculties}>
           Call Faculties
+        </button>
+      </div>
+
+      <div>
+        <button type="button" onClick={callAdmissions}>
+          Call Admissions
         </button>
       </div>
     </div>
