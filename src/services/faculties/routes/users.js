@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 /* GET users listing. */
-router.get("/", function (req, respobse) {
+router.get("/", function (req, response) {
   console.log(`request served at ${new Date()}`);
 
   response.json([
