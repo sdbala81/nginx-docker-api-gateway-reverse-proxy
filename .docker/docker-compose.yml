@@ -10,8 +10,6 @@ services:
       container_name: user-management
       build:
         context: ../src/services/user-management
-      ports:
-        - 5000:5000
       networks:
       - mis-jfn_network
       restart: on-failure
@@ -21,8 +19,6 @@ services:
       container_name: admissions
       build:
         context: ../src/services/admissions
-      ports:
-        - 5002:5002
       networks:
       - mis-jfn_network
       restart: on-failure
@@ -32,8 +28,6 @@ services:
       container_name: faculties
       build:
         context: ../src/services/faculties
-      ports:
-        - 5001:5001
       networks:
       - mis-jfn_network
       restart: on-failure
@@ -73,8 +67,6 @@ services:
       container_name: token-validation
       build:
         context: ../src/services/token-validation
-      ports:
-        - 5003:5003
       networks:
       - mis-jfn_network
       restart: on-failure   

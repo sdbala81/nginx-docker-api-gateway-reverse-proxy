@@ -14,6 +14,7 @@ app.get("/faculties", (request, response) => {
 });
 
 app.get("/departments", (request, response) => {
+  console.log(`request served at ${new Date()}`);
   response.json([
     {
       id: 1,
@@ -38,4 +39,4 @@ app.get("/departments/count/something", (request, response) => {
   response.send("Departments in a faculty count");
 });
 
-app.listen(5001, () => console.log("Faculties Server is up and running"));
+app.listen(80, () => console.log("Faculties Server is up and running"));

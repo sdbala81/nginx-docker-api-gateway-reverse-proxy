@@ -6,4 +6,4 @@ app.get("/", (request, response) => {
   response.send("Admissions service GET request");
 });
 
-app.listen(5002, () => console.log("Admissions Server is up and running"));
+app.listen(80, () => console.log("Admissions Server is up and running"));

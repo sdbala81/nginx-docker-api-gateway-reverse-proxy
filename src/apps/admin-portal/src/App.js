@@ -6,7 +6,7 @@ function App() {
   const [caption, setCaption] = useState("");
 
   const callFaculties = () => {
-    fetch("http://localhost:5001/departments")
+    fetch("http://localhost:82/faculties/departments")
       .then((res) => res.json())
       .then(
         (result) => {

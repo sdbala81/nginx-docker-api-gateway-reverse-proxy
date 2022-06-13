@@ -48,6 +48,4 @@ app.get("/", (request, response) => {
   response.status(200).send();
 });
 
-app.listen(5003, () =>
-  console.log("Token validation service is up and running")
-);
+app.listen(80, () => console.log("Token validation service is up and running"));
