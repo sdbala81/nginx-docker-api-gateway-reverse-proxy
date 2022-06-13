@@ -17,4 +17,7 @@ COPY . .
 EXPOSE 80
 
 # the command that starts our app
-CMD ["npm", "start"]
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+CMD /entrypoint.sh

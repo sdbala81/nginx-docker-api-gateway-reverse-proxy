@@ -5,7 +5,7 @@ var router = express.Router();
 router.get("/", function (request, response) {
   console.log(`request served at ${new Date()}`);
 
-  response.json([
+  response.send([
     {
       id: 1,
       name: "Medicine",
