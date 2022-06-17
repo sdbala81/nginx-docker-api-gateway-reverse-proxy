@@ -1,5 +1,5 @@
 #!/bin/sh
 
-npm run dev
+# npm run dev
 
-# npm start
+npm start

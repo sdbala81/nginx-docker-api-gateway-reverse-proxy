@@ -6,7 +6,7 @@ function App() {
   const [caption, setCaption] = useState("");
 
   const callFaculties = () => {
-    fetch("http://localhost:82/faculties/departments")
+    fetch("http://localhost:82/faculty-service/departments")
       .then((res) => res.json())
       .then(
         (result) => {
@@ -20,7 +20,7 @@ function App() {
   };
 
   const callAdmissions = () => {
-    fetch("http://localhost:82/admissions/users")
+    fetch("http://localhost:82/admission-service/users")
       .then((res) => res.json())
       .then(
         (result) => {

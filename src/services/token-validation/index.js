@@ -4,7 +4,7 @@ import routeGuard from "./routeGuard.js";
 import settings from "./setting.js";
 import { BearerStrategy } from "passport-azure-ad";
 import passport from "passport";
-
+import router from "./router/index.js";
 const app = express();
 
 const {
@@ -41,11 +41,8 @@ passport.use(bearerStrategy);
 app.use(
   "/",
   passport.authenticate("oauth-bearer", { session: false }),
-  routeGuard(accessMatrix)
+  routeGuard(accessMatrix),
+  router
 );
-
-app.get("/", (request, response) => {
-  response.status(200).send();
-});
 
 app.listen(80, () => console.log("Token validation service is up and running"));
