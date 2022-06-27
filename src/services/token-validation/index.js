@@ -37,7 +37,6 @@ app.use(passport.initialize());
 
 passport.use(bearerStrategy);
 
-// Validates token, checks for role and serve
 app.use(
   "/",
   passport.authenticate("oauth-bearer", { session: false }),

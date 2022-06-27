@@ -1,0 +1,90 @@
+version: "3.8"
+
+networks:
+  mis-jfn_network:
+    driver: bridge
+
+services:
+    user-management:
+      image: localhost:5000/user-management:latest
+      container_name: user-management
+      build:
+        context: ../src/services/user-management
+      networks:
+      - mis-jfn_network
+      restart: on-failure
+
+    admissions:
+      image: localhost:5000/admissions:latest
+      container_name: admissions
+      build:
+        context: ../src/services/admissions
+      networks:
+      - mis-jfn_network
+      restart: on-failure
+
+    faculties:
+      image: localhost:5000/faculties:latest
+      container_name: faculties
+      build:
+        context: ../src/services/faculties
+      networks:
+      - mis-jfn_network
+      restart: on-failure
+
+    admin-portal:
+      image: localhost:5000/admin-portal:latest
+      container_name: admin-portal
+      build:
+        context: ../src/apps/admin-portal
+      env_file: ../src/apps/admin-portal/docker.env
+      depends_on:
+        - user-management
+        - admissions
+        - faculites
+      networks:
+      - mis-jfn_network
+      restart: on-failure
+
+
+    student-portal:
+      image: localhost:5000/student-portal:latest
+      container_name: student-portal
+      build:
+        context: ../src/apps/student-portal
+      env_file: ../src/apps/student-portal/docker.env
+      depends_on:
+        - user-management
+        - admissions
+        - faculites
+      networks:
+      - mis-jfn_network
+      restart: on-failure
+
+    
+    token-validation:
+      image: localhost:5000/token-validation:latest
+      container_name: token-validation
+      build:
+        context: ../src/services/token-validation
+      networks:
+      - mis-jfn_network
+      restart: on-failure   
+
+
+    reverse-proxy:
+      image: nginx:latest
+      container_name: reverse-proxy
+      depends_on:
+        - user-management
+        - admissions
+        - faculites
+        - admin-portal
+      volumes:
+        - ../.nginx/nginx.conf:/etc/nginx/nginx.conf
+      networks:
+      - mis-jfn_network
+      ports:
+        - 80:80
+        - 81:81
+        - 82:82
